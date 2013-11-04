@@ -1,4 +1,3 @@
-
 from OCC.IGESControl import *
 from OCC.STEPControl import *
 import os
@@ -39,7 +38,7 @@ def shape_to_file(shape, pth, filename, format='iges'):
         from OCC import TopoDS, StlAPI
         #shape = TopoDS.TopoDS_Shape()
         stl_reader = StlAPI.StlAPI_Writer()
-        stl_reader.Read(shape,_file)
+        stl_reader.Write(shape,_file)
         
     else:
         raise TypeError('format should be one of [iges,igs], [step,stp], brep, stl\ngot %s' % (format))
